@@ -13,8 +13,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tracker_db", {
   useCreateIndex: true,
 });
 
-const apiRoutes = require("/routes/api-Routes.js");
-const userRoutes = require("/routes/user-Routes.js");
+const apiRoutes = require("./routes/api-Routes.js");
+const userRoutes = require("./routes/user-Routes.js");
 app.use(apiRoutes, userRoutes);
 
 app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
