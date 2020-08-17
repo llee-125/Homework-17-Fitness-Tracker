@@ -1,6 +1,14 @@
 const router = require("express").Router();
-const { viewWorkout } = require("../controllers/api-controller");
+const {
+  getLastWorkout,
+  newExercise,
+  seeAll,
+} = require("../controllers/api-controller");
 
-// router.get("/workout", viewWorkout);
+router.get("/api/workout", getLastWorkout);
+
+router.post("/api/new", newExercise);
+
+router.put("/api/all", seeAll);
 
 module.exports = router;

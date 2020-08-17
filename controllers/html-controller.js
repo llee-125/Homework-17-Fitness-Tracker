@@ -1,7 +1,7 @@
-const User = require("../models/User");
+const User = require("../models/workout");
 
 module.exports = {
-    getUser: (req, res) => {
+  getUser: (req, res) => {
     !req.query.id
       ? User.find()
           .then((allUsers) => res.send(allUsers))
@@ -10,4 +10,4 @@ module.exports = {
           .then((user) => res.send(user))
           .catch((err) => res.send(err));
   },
-}
+};
